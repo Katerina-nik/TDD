@@ -1,8 +1,6 @@
 package ru.netology;
 
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
+import java.util.*;
 
 public class PhoneBook {
     static HashMap<String, Long> phoneBook = new HashMap<>();
@@ -27,5 +25,8 @@ public class PhoneBook {
     }
     public long findByName(String name) {
         return phoneBook.get(name);
+    }
+    public List<String> printAllNames() {
+        return null;
     }
 }

@@ -32,4 +32,10 @@ public class PhoneBookTest {
         assertEquals("Anton", actual);
 
     }
+    @Test
+    public void FindByNameTest(){
+        phoneBook.add(name,number);
+        long actual = phoneBook.findByName(name);
+        assertEquals(9111822306L, actual);
+    }
 }

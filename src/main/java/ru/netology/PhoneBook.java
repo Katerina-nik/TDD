@@ -27,6 +27,9 @@ public class PhoneBook {
         return phoneBook.get(name);
     }
     public List<String> printAllNames() {
-        return null;
+        List<String> allName = new ArrayList<>(phoneBook.keySet());
+        Collections.sort(allName);
+
+        return allName;
     }
 }

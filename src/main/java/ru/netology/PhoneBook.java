@@ -1,9 +1,12 @@
 package ru.netology;
 
 import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
 
 public class PhoneBook {
     static HashMap<String, Long> phoneBook = new HashMap<>();
+    String name;
 
     public int add(String name, long number) {
         if (!phoneBook.containsKey(name)) {
@@ -12,7 +15,14 @@ public class PhoneBook {
         return phoneBook.size();
     }
     public String findByNumber(long number) {
-        return null;
+        Iterator<Map.Entry<String, Long>> iterator = phoneBook.entrySet().iterator();
+        while (iterator.hasNext()) {
+            Map.Entry<String, Long> pair =  iterator.next();
+            if (pair.getValue().equals(number)) {
+                name = pair.getKey();
+            }
+            iterator.remove();
+        }
+        return name;
     }
-
 }
